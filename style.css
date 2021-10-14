@@ -1,0 +1,171 @@
+/* Styling för containern och huvudinnehållet */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(pink, #f56a73);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.container {
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(104, 104, 104, 0.8);
+  margin: 0% 30%;
+  margin-top: 0.5rem;
+  width: 40%;
+  background-color: white;
+  text-align: center;
+
+  /* animationen för när sidan laddar */
+  animation: page-load-enter 0.8s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.34, 2.1, 0.64, 1);
+}
+
+@keyframes page-load-enter {
+  0% {
+    transform: translate(0, -200px);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* Enkel styling för h1 och score mm */
+
+h1 {
+  font-style: bolder;
+  font-size: 40px;
+  padding-top: 0.6rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+}
+
+.score {
+  font-size: 12px;
+  margin-top: 0.5rem;
+}
+
+.inputText {
+  padding: 4px;
+}
+
+.inputButton {
+  margin-top: 1.5rem;
+  padding: 4px;
+}
+
+.msg {
+  font-size: 12px;
+  margin-top: 0.3rem;
+}
+
+/* animation för felmeddelandet */
+
+.errorMsg {
+  color: red;
+  animation: error-msg 0.8s;
+  animation-fill-mode: both;
+}
+
+@keyframes error-msg {
+  0% {
+    color: white;
+  }
+  20% {
+    color: red;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: red;
+  }
+  80% {
+    color: white;
+  }
+  100% {
+    color: red;
+  }
+}
+
+/* Animation för nytt list element */
+
+li {
+  list-style: none;
+  animation: new-toDo 0.3s;
+  animation-timing-function: ease-in;
+  font-family: sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+@keyframes new-toDo {
+  0% {
+    transform: translate(0, 15px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* Styling för newSpan elementet och dess animation och hover effekt */
+
+.newSpan {
+  margin: 4px 0;
+  color: black;
+  list-style: none;
+  font-size: 24px;
+  border: 1px solid white;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.newSpan:hover {
+  text-decoration-color: black;
+  text-decoration: line-through;
+  text-decoration-color: black;
+  text-decoration-thickness: 2px;
+}
+
+.completed:hover {
+  text-decoration-color: darkgray;
+}
+
+.completed {
+  color: darkgray;
+  text-decoration: line-through;
+  text-decoration-color: darkgray;
+  text-decoration-thickness: 2px;
+  transition: color 0.3s;
+  z-index: 251;
+}
+
+/* List och papperskorgs styling */
+
+.list {
+  font-size: 18px;
+  margin-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* tar bort stylingen ifrån listan så att det inte är någon prick framför varje todo */
+
+.trashcan {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 12px;
+}
