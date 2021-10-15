@@ -7,8 +7,10 @@
 body {
   background-image: linear-gradient(pink, #f56a73);
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 99.1vh;
 }
+
+/* container styling och animationen för när sidan laddar */
 
 .container {
   padding: 0;
@@ -19,8 +21,7 @@ body {
   background-color: white;
   text-align: center;
 
-  /* animationen för när sidan laddar */
-  animation: page-load-enter 0.8s;
+  animation: page-load-enter 0.7s;
   animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0.34, 2.1, 0.64, 1);
 }
@@ -30,13 +31,26 @@ body {
     transform: translate(0, -200px);
     opacity: 0;
   }
-
   25% {
     opacity: 0.2;
   }
-
   100% {
     transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.main {
+  animation: page-load-enter2 1s;
+  animation-delay: 0.7s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes page-load-enter2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -45,36 +59,39 @@ body {
 
 h1 {
   font-style: bolder;
-  font-size: 40px;
+  font-size: 48px;
   padding-top: 0.6rem;
   font-family: "Times New Roman", Times, serif;
   font-weight: bolder;
 }
 
 .score {
-  font-size: 12px;
-  margin-top: 0.5rem;
+  font-size: 14px;
+  margin-top: 0.8rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
 }
 
 .inputText {
-  padding: 4px;
+  padding: 6px;
 }
 
 .inputButton {
   margin-top: 1.5rem;
-  padding: 4px;
+  padding: 6px;
+  font-weight: 600;
 }
 
 .msg {
   font-size: 12px;
-  margin-top: 0.3rem;
+  margin-top: 0.6rem;
 }
 
 /* animation för felmeddelandet */
 
 .errorMsg {
   color: red;
-  animation: error-msg 0.8s;
+  animation: error-msg 0.9s;
   animation-fill-mode: both;
 }
 
@@ -125,7 +142,7 @@ li {
 /* Styling för newSpan elementet och dess animation och hover effekt */
 
 .newSpan {
-  margin: 4px 0;
+  margin: 6px 0;
   color: black;
   list-style: none;
   font-size: 24px;
@@ -142,13 +159,13 @@ li {
 }
 
 .completed:hover {
-  text-decoration-color: darkgray;
+  text-decoration-color: gray;
 }
 
 .completed {
-  color: darkgray;
+  color: gray;
   text-decoration: line-through;
-  text-decoration-color: darkgray;
+  text-decoration-color: gray;
   text-decoration-thickness: 2px;
   transition: color 0.3s;
   z-index: 251;
@@ -159,7 +176,7 @@ li {
 .list {
   font-size: 18px;
   margin-top: 0.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.8rem;
 }
 
 /* tar bort stylingen ifrån listan så att det inte är någon prick framför varje todo */
